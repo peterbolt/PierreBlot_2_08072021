@@ -5,43 +5,194 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reservia</title>
-    <link rel="stylesheet" href="css.css">
+    <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/styles.css">
 </head>
 <body>
     <!-- Header -->
     <header>
 
-        <nav>
-
+        <nav class="menu">
+            <div>
+                <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\logo\Reservia.svg">
+            </div>
+            <a class="heb" href="#hebergements">Hébergements</a>
+            <a class="act" href="#activites">Activités</a>
+            <a class="login" href="#"><strong>S'inscrire</strong></a>
         </nav>
 
     </header>
 
-
+    <main>
+        <h2 id="slogan">Trouver votre hébergement pour des vacances de rêve</h2>
+        <p class="subtitle">En plein centre ville ou en pleine nature</p>
+    
     <!-- Section 1 -->
-    <section id="section_one">
+        <section id="recherche"><!---Ajouter icône "map"-->
+            <div class="searchbar">
+                <i class="fas fa-map-marker-alt"></i>
+                <input class="searchfield" type="search" placeholder="Marseille, France">
+                <button class="searchbutton">Rechercher</button>
+            </div>
+            <div class="filters"><!---Voir si liste pertinente ou bien nav et ajouter les icones-->
+                <h4>Filtres</h4>
+                <ul>
+                    <li>Economique</li>
+                    <li>Familial</li>
+                    <li>Romantique</li>
+                    <li>Animaux autorisés</li>
+                </ul>
+            </div>
+            <div class="resultsearch"> <!---Ajouter icône "i"-->
+                <p>Plus de 500 logements sont disponibles dans cette ville</p>
+            </div>
+        </section>
 
-        <aside>
+        <!-- Section 2 -->
+        <section id="hebergements"> <!---Ajouter notation "étoiles"-->
+            <h3>Hébergements à Marseille</h3>
+            <div class="hebcontainer">
+                <a class="carteheb">
+                    <div class="hebimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\marcus-loke-WQJvWU_HZFo-unsplash.jpg">
+                    </div>
+                    <h4 class="hebtitle">Auberge de la Cannebière</h4>
+                    <h5>Nuit à partir de <strong>25€</strong></h5>
+                </a>
+                <a class="carteheb">
+                    <div class="hebimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\fred-kleber-gTbaxaVLvsg-unsplash.jpg">
+                    </div>
+                    <h4 class="hebtitle">Hôtel du port</h4>
+                    <h5>Nuit à partir de <strong>52€</strong></h5>
+                </a>
+                <a class="carteheb">
+                    <div class="hebimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\reisetopia-B8WIgxA_PFU-unsplash.jpg">
+                    </div>
+                    <h4 class="hebtitle">Hôtel Les mouettes</h4>
+                    <h5>Nuit à partir de <strong>76€</strong></h5>
+                </a>
+                <a class="carteheb">
+                    <div class="hebimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\annie-spratt-Eg1qcIitAuA-unsplash.jpg">
+                    </div>
+                    <h4 class="hebtitle">Hôtel de la mer</h4>
+                    <h5>Nuit à partir de <strong>46€</strong></h5>
+                </a>
+                <a class="carteheb">
+                    <div class="hebimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\nicate-lee-kT-ZyaiwBe0-unsplash.jpg">
+                    </div>
+                    <h4 class="hebtitle">Auberge Le Panier</h4>
+                    <h5>Nuit à partir de <strong>23€</strong></h5>
+                </a>
+                <a class="carteheb">
+                    <div class="hebimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\febrian-zakaria-M6S1WvfW68A-unsplash.jpg">
+                    </div>
+                    <h4 class="hebtitle">Hôtel chez Amina</h4>
+                    <h5>Nuit à partir de <strong>96€</strong></h5>
+                </a> 
+                <h4>Afficher plus</h4>
+            </div>
+            <aside>
+                <div class="popcontainer"><!---Ajouter icône "voir plus"-->
+                <h3>Les plus populaires</h3><!---Ajouter notation "étoiles"-->
+                <a class="carte1pop">
+                    <div class="popimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\emile-guillemot-Bj_rcSC5XfE-unsplash.jpg">
+                    </div>
+                    <h4 class="poptitle">Hôtel Le soleil du matin</h4>
+                    <h5>Nuit à partir de <strong>128€</strong></h5>
+                </a>
+                <a class="carte2pop">
+                    <div class="popimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\aw-creative-VGs8z60yT2c-unsplash.jpg">
+                    </div>
+                    <h4 class="poptitle">Au coeur de L'eau Chambres d'hôtes</h4>
+                    <h5>Nuit à partir de <strong>71€</strong></h5>
+                </a>
+                <a class="carte3pop">
+                    <div class="popimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\hebergements\3_medium\febrian-zakaria-sjvU0THccQA-unsplash.jpg">
+                    </div>
+                    <h4 class="poptitle">Hôtel Tout bleu et Blanc</h4>
+                    <h5>Nuit à partir de <strong>68€</strong></h5>
+                </a>
+                </div>
+            </aside>
+        
 
-        </aside>
+        </section>
 
-    </section>
-
-    <!-- Section 2 -->
-    <section id="section_two">
-
-        <aside>
-            
-        </aside>
-
-    </section>
+        <!-- Section 3 -->
+        <section id="activites">
+            <h3>Activités à Marseille</h3>
+            <div class="actcontainer">
+                <a class="carte1act">
+                    <div class="actimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\activites\3_medium\reno-laithienne-QUgJhdY5Fyk-unsplash.jpg">
+                    </div>
+                    <h4 class="acttitle">Vieux Port</h4>
+                </a>
+                <a class="carte2act">
+                    <div class="actimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\activites\3_medium\paul-hermann-QFTrLdQIRhI-unsplash.jpg">
+                    </div>
+                    <h4 class="acttitle">Fort de Pomègues</h4>
+                </a>
+                <a class="carte3act">
+                    <div class="actimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\activites\3_medium\kevin-hikari-rV_Qd1l-VXg-unsplash.jpg">
+                    </div>
+                    <h4 class="acttitle">Îles du Frioul</h4>
+                </a>
+                <a class="carte4act">
+                    <div class="actimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\activites\3_medium\kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg">
+                    </div>
+                    <h4 class="acttitle">Parc National des Calanques</h4>
+                </a>
+                <a class="carte5act">
+                    <div class="actimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\activites\3_medium\florian-wehde-xW9e8gdotxI-unsplash.jpg">
+                    </div>
+                    <h4 class="acttitle">Notre-Dame-de-la-Garde</h4>
+                </a>
+                <a class="carte6act">
+                    <div class="actimg">
+                        <img src="C:\Users\Pierre-Rémy\Documents\DevLearning\Reservia\assets\Images\activites\3_medium\lena-paulin-wH2-EJoDcV0-unsplash.jpg">
+                    </div>
+                    <h4 class="acttitle">Parc Longchamp</h4>
+                </a>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer>
-
+        <div class="footertab">
+            <div class="col1">
+                <h4>A propos</h4>
+                <a class="footerlink" href="#">Fonctionnement du site</a>
+                <a class="footerlink" href="#">Conditions générales de vente</a>
+                <a class="footerlink" href="#">Données et confidentialité</a>
+            </div>
+            <div class="col2">
+                <h4>Nos hébergements</h4>
+                <a class="footerlink" href="#">Charte qualité</a>
+                <a class="footerlink" href="#">Soumettre votre hôtel</a>
+            </div>
+            <div class="col3">
+                <h4>Assistance</h4>
+                <a class="footerlink" href="#">Centre d'aide</a>
+                <a class="footerlink" href="#">Nous contacter</a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
