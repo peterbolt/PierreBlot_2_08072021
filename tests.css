@@ -2,10 +2,6 @@
   font-family: "Raleway";
   src: url(./assets/Raleway/static/Raleway-Medium.ttf);
 }
-/* 
-* {
-  border: 2px solid red;
-} */
 
 * {
   font-family: "Raleway", Sans-serif;
@@ -17,13 +13,14 @@
 html {
   scroll-behavior: smooth;
 }
-/* Division de la page en séctions grace au grid */
+
+/** Division de la page en séctions grace au grid */
 body {
   min-height: 100vh;
   height: 100%;
   display: grid;
   grid-template-columns: 100%;
-  grid-template-rows: 6% 8% 6% 4% 35% 28% 13%;
+  grid-template-rows: 6% 8% 5% 3% 34% 29% auto;
   grid-template-areas:
     "nav"
     "search"
@@ -60,26 +57,25 @@ body {
   grid-area: footer;
 }
 
-/* Barre de menu */
-.logocontainer {
+/** Barre de navigation */
+.navigation-logo {
   display: flex;
   align-items: center;
 }
 
-.menu {
+.navigation-bar {
   display: grid;
   grid-template-columns: 60% auto auto auto;
   padding: 0em 3em 0em 3em;
   width: 100vw;
 }
 
-.menu > a {
+.navigation-bar > a {
   display: flex;
   justify-content: center;
 }
 
 header a {
-  /* flex-wrap: wrap; */
   padding: 3em 0 3em 0;
   border-top: 2px solid white;
 }
@@ -96,40 +92,50 @@ header a:active {
   color: #0065fc;
 }
 
-#login {
+#navigation-login {
   color: #0065fc !important;
 }
 
-#login:hover {
+#navigation-login:hover {
   border-top: 2px solid white;
 }
 
-/* Barre de recherche */
-#search {
+/** Barre de recherche */
+#search-container {
   padding: 0em 3em 0em 3em;
   background: #fff;
+  width: 100vw;
 }
 
-.searchbar {
+.search-icon {
+  display: none !important;
+}
+.search-button--switch {
   display: flex;
-  margin: 2em 0 2em 0;
+}
+
+.search-bar {
+  display: flex;
+  margin: 2em 0 0em 0;
   align-items: center;
   height: 2em;
-  width: 70%;
+  width: 100%;
 }
 
-.searchfield {
+.search-searchfield {
   height: 40px;
   border: 1px solid #f2f2f2;
   text-indent: 10px;
+  width: 16vw;
+  min-width: 12vw;
 }
-.searchfield::placeholder {
+.search-searchfield::placeholder {
   font-size: 14px;
   font-weight: 700;
   color: black;
 }
 
-.mapicon {
+.search-mapicon {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -140,7 +146,7 @@ header a:active {
   border-top-left-radius: 30%;
 }
 
-.searchbutton {
+.search-button {
   color: white;
   font-weight: bold;
   display: flex;
@@ -156,19 +162,17 @@ header a:active {
   cursor: pointer;
 }
 
-/* Affichache des filtres */
-.filters {
+/** Affichache des filtres */
+.filters-container {
   padding: 0em 3em 0em 3em;
   background: #fff;
   display: flex;
   grid-gap: 2vw;
   align-items: center;
   justify-content: flex-start;
-  margin-bottom: 50px;
-  margin-top: 30px;
 }
 
-.filticon {
+.filter-element--icon {
   background-color: #deebff;
   color: #0065fc;
   border-radius: 100%;
@@ -181,7 +185,7 @@ header a:active {
   position: relative;
 }
 
-.filtcontainer {
+.filter-element {
   border-radius: 60px;
   display: flex;
   align-items: center;
@@ -189,19 +193,23 @@ header a:active {
   height: 50px;
   border: 2px solid #d9d9d9;
   cursor: pointer;
+  /* *Animation des filtres grâce au shadow */
+  box-shadow: 0px 0px 0px 1px #d9d9d9;
+  transition: box-shadow 0.5s linear;
 }
 
-.filtcontainer:hover {
-  border: 3px solid #0065fc;
+.filter-element:hover {
+  border: 2px solid #0065fc;
+  box-shadow: 0px 0px 0px 3px #0065fc;
 }
 
-.ftitle {
+.filter-element--title {
   margin: 0 1rem 0 1rem;
   font-weight: bold;
 }
 
-/* Résultat de la recherche */
-.resultsearch {
+/** Résultat de la recherche */
+.result-research {
   display: flex;
   padding: 1em 3em 1em 3em;
   height: 25px;
@@ -209,7 +217,7 @@ header a:active {
   justify-content: start;
 }
 
-.infoicon {
+.result-research--icon {
   color: #0065fc;
   border-radius: 100%;
   border: 2px solid #f2f2f2;
@@ -222,31 +230,34 @@ header a:active {
   position: relative;
 }
 
-/* Séction Hébergements */
+/** Séction Hébergements */
 
-.hebcontainer {
+.accomodation-container {
   display: grid;
   padding: 0em 3em 0em 3em;
   grid-template-columns: 66% 33%;
   column-gap: 2rem;
 }
 
-.hebgrid {
+.accomodation-container-results {
   display: grid;
-  grid-template-rows: repeat(3, min-content);
+  grid-template-rows: 10% 80% 10%;
+  align-content: center;
   padding: 2rem;
   background-color: #f2f2f2;
   border-radius: 1.5rem;
 }
 
-.heblist {
+.accomodation-container-results-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 2rem;
 }
 
-.hebbox {
+.accomodation-container-results-grid--element {
+  display: grid;
+  grid-template-rows: 70% 30%;
   width: 100%;
   box-shadow: 0 0 16px #0000002e;
   border-radius: 1.5rem;
@@ -254,13 +265,14 @@ header a:active {
   color: black;
 }
 
-.hebbox > .hebimg {
+.accomodation-container-results-grid--element
+  > .accomodation-container-results-grid--element---image-container {
   padding: 4px 4px 0 4px;
 }
-.hebimgfit {
+.accomodation-container-results-grid--element---image {
   object-fit: cover;
   object-position: center;
-  height: 7vw;
+  height: 100px;
   width: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -268,9 +280,10 @@ header a:active {
   border-top-right-radius: 1.5rem;
 }
 
-.hebdesc {
-  display: grid;
-  grid-row-gap: 0.5em;
+.accomodation-container-results-grid--element---description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   padding: 4px 15px 10px 15px;
 }
 
@@ -283,23 +296,22 @@ header a:active {
   color: #d9d9d9;
 }
 
-/* aside Les plus populaires */
-.hebpop {
+/** aside Les plus populaires */
+.accomodation-container-populars {
   display: grid;
-  grid-template-rows: repeat(3, min-content);
   padding: 2rem;
   background-color: #f2f2f2;
   border-radius: 1.5rem;
 }
 
-.poplist {
+.accomodation-container-populars-grid {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 3fr;
+  grid-template-rows: 1fr 1fr 1fr;
   gap: 2rem;
 }
 
-.popbox {
+.accomodation-container-populars-grid--element {
   display: grid;
   grid-template-columns: 40% 60%;
   width: 100%;
@@ -309,10 +321,11 @@ header a:active {
   color: black;
 }
 
-.popbox > .popimg {
+.accomodation-container-populars-grid--element
+  > .accomodation-container-populars-grid--element---image-container {
   padding: 4px 4px 0px 4px;
 }
-.popimgfit {
+.accomodation-container-populars-grid--element---image {
   object-fit: cover;
   object-position: center;
   height: 9vw;
@@ -323,12 +336,15 @@ header a:active {
   border-bottom-left-radius: 1.5rem;
 }
 
-.popdesc {
+.accomodation-container-populars-grid--element---description {
   display: grid;
   padding: 15px 15px 5px 15px;
 }
 
-/* Section Activités */
+/** Section Activités */
+#activites > h3 {
+  padding: 0 0 1.5em 3em;
+}
 
 .activity-container {
   display: grid;
@@ -343,7 +359,7 @@ header a:active {
   height: 70%;
 }
 
-.activity-box {
+.activity--element {
   display: grid;
   grid-template-rows: 79% 21%;
   width: 100%;
@@ -364,7 +380,7 @@ header a:active {
   color: black;
 }
 
-.activity-image-src {
+.activity--element---image-src {
   object-fit: cover;
   object-position: center;
   height: 100%;
@@ -394,14 +410,14 @@ header a:active {
   grid-area: img6;
 }
 
-.activity-box > h4 {
+.activity--element > h4 {
   display: flex;
   align-items: center;
   padding-left: 1.5rem;
 }
 
-/* Footer */
-.footertab {
+/** Footer */
+footer {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   justify-content: center;
@@ -409,23 +425,27 @@ header a:active {
   margin: 3em 3em 5em 3em;
 }
 
-.footercol {
+.footer-column {
   display: grid;
   row-gap: 0.6em;
 }
 
-.footerlink {
+.footer-column--link {
   color: black;
 }
 
-/* Pour modifier le format de la page en fonction de la résolution */
-/* @media screen and (max-width: 800px) {
+footer > ul {
+  list-style: none;
+}
+
+/** Responsive pour tablette */
+@media screen and (max-width: 900px) {
   body {
     display: grid;
     grid-template-columns: 1fr;
     height: 100%;
-    grid-template-columns: 100%;
-    grid-template-rows: 6% 8% 6% 4% 35% 28% 13%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
     grid-template-areas:
       "nav"
       "search"
@@ -435,7 +455,7 @@ header a:active {
       "sect2"
       "footer";
   }
-  
+
   .bloc:nth-child(1) {
     grid-area: nav;
     display: flex;
@@ -461,4 +481,405 @@ header a:active {
     background: #f2f2f2;
     grid-area: footer;
   }
-} */
+
+  /** Barre de navigation-bar */
+
+  .navigation-bar {
+    display: grid;
+    grid-template-columns: 40% auto auto auto;
+    padding: 0em 3em 0em 3em;
+    width: 100vw;
+  }
+
+  /** Affichage des filtres */
+  .filters-container {
+    padding: 0em 3em 0em 3em;
+    background: #fff;
+    display: flex;
+    grid-gap: 2vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+    margin-top: 30px;
+  }
+
+  /** Résultat de la recherche */
+  .result-research {
+    display: flex;
+    padding: 0em 3em 3em 3em;
+    height: 25px;
+    align-items: center;
+    justify-content: start;
+  }
+
+  /** Séction Hébergements */
+  .accomodation-container {
+    display: grid;
+    padding: 0em 3em 3em 3em;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "pop"
+      "heb";
+    row-gap: 2rem;
+  }
+
+  .accomodation-container-results {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    padding: 2rem;
+    background-color: #f2f2f2;
+    border-radius: 1.5rem;
+    grid-area: heb;
+  }
+
+  .accomodation-container-results-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  .accomodation-container-results-grid--element---image {
+    object-fit: cover;
+    object-position: center;
+    height: 15vw;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+
+  /** aside Les plus populaires */
+  .accomodation-container-populars {
+    display: grid;
+    grid-template-rows: repeat(3, min-content);
+    padding: 2rem;
+    background-color: #f2f2f2;
+    border-radius: 1.5rem;
+    grid-area: pop;
+  }
+
+  .accomodation-container-populars-grid--element---image {
+    object-fit: cover;
+    object-position: center;
+    height: 17vw;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+
+  /** Footer */
+  footer {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    width: 100%;
+    justify-content: space-around;
+    align-items: start;
+    margin: 3em 3em 5em 3em;
+  }
+}
+
+/** Responsive pour smartphone */
+@media screen and (max-width: 730px) {
+  body {
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+    grid-template-columns: auto;
+    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-areas:
+      "nav"
+      "search"
+      "filter"
+      "result"
+      "sect1"
+      "sect2"
+      "footer";
+  }
+
+  .bloc:nth-child(1) {
+    grid-area: nav;
+    display: grid;
+  }
+  .bloc:nth-child(2) {
+    display: flex;
+    grid-area: search;
+  }
+  .bloc:nth-child(3) {
+    display: flex;
+    grid-area: filter;
+  }
+  .bloc:nth-child(4) {
+    grid-area: result;
+  }
+  .bloc:nth-child(5) {
+    grid-area: sect1;
+  }
+  .bloc:nth-child(6) {
+    grid-area: sect2;
+  }
+  .bloc:nth-child(7) {
+    background: #f2f2f2;
+    grid-area: footer;
+  }
+
+  /** Barre de navigation */
+
+  .navigation-bar {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-areas:
+      "logo login"
+      "link link";
+    padding: 1em 0 0 0;
+    width: 100vw;
+  }
+
+  .navigation-logo {
+    display: flex;
+    align-items: center;
+    padding-left: 1.5em;
+    grid-area: logo;
+  }
+
+  .navigation-bar.navigation-link {
+    display: grid;
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-area: link;
+  }
+
+  header a {
+    flex-wrap: wrap;
+    padding: 1.5em 0 1em 0;
+    border-top: none;
+    border-bottom: 3px solid white;
+  }
+
+  a:link,
+  a:visited {
+    text-decoration: none;
+    color: black;
+  }
+  header a:hover,
+  header a:active {
+    text-decoration: none;
+    border-top: none;
+    border-bottom: 3px solid #0065fc;
+    color: #0065fc;
+  }
+
+  #navigation-login {
+    display: flex;
+    justify-content: flex-end;
+    color: #0065fc !important;
+    padding-right: 1.5em;
+    margin-top: 0.5em;
+    grid-area: login;
+  }
+
+  #navigation-login:hover {
+    border-bottom: 3px solid white;
+    border-top: none;
+  }
+
+  /** Barre de recherche */
+  #search-container {
+    padding: 1.5em 1em 0em 1.5em;
+    background: #fff;
+    width: 100vw;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: stretch;
+    height: auto;
+    width: 100%;
+    margin: 2em 0 0 0;
+  }
+
+  .search-searchfield {
+    height: 50px;
+    border: 1px solid #f2f2f2;
+    text-indent: 10px;
+    width: 100%;
+  }
+  .search-searchfield::placeholder {
+    font-size: 14px;
+    font-weight: 700;
+    color: black;
+  }
+
+  .search-mapicon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 65px;
+    background-color: #f2f2f2;
+    border-bottom-left-radius: 1em;
+    border-top-left-radius: 1em;
+  }
+
+  .search-button {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0065fc;
+    border: none;
+    height: 50px;
+    width: 50px;
+    position: relative;
+    right: 10px;
+    border-radius: 1em;
+    cursor: pointer;
+  }
+
+  .search-icon {
+    display: flex !important;
+  }
+
+  .search-button--switch {
+    display: none;
+  }
+
+  /** Affichage des filtres */
+  .filters-container {
+    padding: 0em 1.5em 0em 1.5em;
+    background: #fff;
+    width: 100vw;
+    display: flex;
+    grid-gap: 2vw;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .filters-container > h3 {
+    width: 100%;
+  }
+  /** Résultat de la recherche */
+  .result-research {
+    display: flex;
+    padding: 0em 1.5em 3em 1.5em;
+    height: 25px;
+    align-items: center;
+    justify-content: start;
+    width: 100vw;
+  }
+
+  /** Séction Hébergements */
+  .accomodation-container {
+    display: grid;
+    padding: 0em 0em 0em 0em;
+    grid-template-columns: 100%;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "pop"
+      "heb";
+    row-gap: 2rem;
+  }
+
+  .accomodation-container-results {
+    display: grid;
+    padding: 1.5rem;
+    width: 100vw;
+    background-color: white;
+    border-radius: 0;
+    grid-area: heb;
+  }
+
+  .accomodation-container-results-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    gap: 2rem;
+  }
+
+  .accomodation-container-results-grid--element---image {
+    object-fit: cover;
+    object-position: center;
+    height: 17vh;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+
+  /** aside Les plus populaires */
+  .accomodation-container-populars {
+    display: grid;
+    padding: 1.5rem;
+    width: 100vw;
+    background-color: #f2f2f2;
+    border-radius: 0;
+    grid-area: pop;
+  }
+
+  .accomodation-container-populars-grid--element---image {
+    object-fit: cover;
+    object-position: center;
+    height: 23vh;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
+
+  /** Section Activités */
+  #activites > h3 {
+    padding: 1.5em 1.5em 2em 1.5em;
+  }
+
+  .activity-container {
+    display: flex;
+    padding: 0em 1.5em 3em 1.5em;
+    flex-wrap: wrap;
+    width: 100vw;
+    row-gap: 2rem;
+  }
+
+  .activity--element {
+    display: grid;
+    grid-template-rows: 70% 30%;
+    width: 100%;
+    box-shadow: 0 5px 10px 0px #c5c5c544;
+    border-radius: 1.5rem;
+    background-color: white;
+    color: black;
+  }
+
+  .activity--element---image-src {
+    object-fit: cover;
+    object-position: center;
+    height: 23vh;
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+
+  /** Footer */
+  footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+    grid-row-gap: 2em;
+    justify-content: left;
+    align-items: start;
+    margin: 3em 3em 5em 2em;
+  }
+
+  .footer-column > br {
+    display: none;
+  }
+}
