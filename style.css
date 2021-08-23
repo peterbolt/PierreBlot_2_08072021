@@ -423,12 +423,20 @@ a:visited {
 }
 
 /** Footer */
-.footer__box {
+footer {
   background: #f2f2f2;
   width: 100%;
   display: flex;
-  justify-content: space-around;
-  align-items: start;
+  justify-content: center;
+}
+.footer__box {
+  background: #f2f2f2;
+  max-width: 100%;
+  width: 1440px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
   padding: 1em 0em 3em 0em;
 }
 
@@ -747,12 +755,12 @@ a:visited {
     cursor: pointer;
   }
 
-  .searchBar__button--icon {
-    display: flex !important;
-  }
-
   .searchBar__button--text {
     display: none;
+  }
+
+  .searchBar__button--icon {
+    display: flex !important;
   }
 
   /** Affichage des filtres */
