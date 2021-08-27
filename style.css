@@ -306,7 +306,7 @@ a:visited {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto auto auto;
-  row-gap: 2rem;
+  gap: 2rem;
 }
 
 .accomodationContainer__popularCards__element {
@@ -475,6 +475,7 @@ footer {
     flex-direction: column;
     border-radius: 1rem;
     background-color: white;
+    width: 100%;
     box-shadow: 0 0 16px #0000002e;
   }
   .accomodationContainer__popularCards__element__image {
@@ -909,7 +910,7 @@ footer {
   .activityContainer__element__image {
     object-fit: cover;
     object-position: center;
-    height: 22vh;
+    height: 19vh;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
