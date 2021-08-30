@@ -849,7 +849,7 @@ footer {
   .accomodationContainer__cards__element__image {
     object-fit: cover;
     object-position: center;
-    height: 23vw;
+    height: 13vh;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
@@ -917,7 +917,7 @@ footer {
   .activityContainer__element__image {
     object-fit: cover;
     object-position: center;
-    height: 19vh;
+    height: 16vh;
     width: 100%;
     max-width: 100%;
     max-height: 100%;
