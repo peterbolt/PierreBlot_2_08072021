@@ -293,6 +293,13 @@ a:visited {
 }
 
 /** aside Les plus populaires */
+aside > h3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5em;
+}
+
 .accomodationContainer {
   display: flex;
   flex-direction: column;
